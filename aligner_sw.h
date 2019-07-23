@@ -70,7 +70,13 @@
 #include <iostream>
 #include <limits>
 #include "threading.h"
+
+#ifdef __aarch64__
+#include "SSE2NEON.h"
+#else
 #include <emmintrin.h>
+#endif
+
 #include "aligner_sw_common.h"
 #include "aligner_sw_nuc.h"
 #include "ds.h"
